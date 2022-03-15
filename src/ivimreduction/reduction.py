@@ -1,5 +1,4 @@
-def hello():
-    print("Hello World")
+import itertools
 
 
 class LinearReduction:
@@ -16,6 +15,41 @@ class LinearReduction:
     rrmse_best = [] # 1 x n_reduction
 
     # Methods
+    def dataLoop(data, bvals, n_reduction, fitting_method):
+    
+    def linearAlgorithmLoop(data, bvals, n_reduction, fitting_method):
+        """ A method for loop linearly in the best b_vals selections
+        """
+        def linearListSelection(input):
+            """Return the n-1 possible iterations of an given list"""
+            return itertools.combinations(input,len(input)-1)
+        
+        best_bvals =  bvals
+        
+        for i in range(n_reduction): 
+            bvalsList = linearListSelection(best_bvals)
+            # rrmse storage
+            
+            # mean_rrmse storage
+            
+            for j in range(len(bvalsList)):
+
+                for x in range(len(data.shape[0])):
+                    for y in range(len(data.shape[1])):
+                        for z in range(len(data.shape[2])):
+                            # fit
+                            # calcule rrmse
+                            rrmse_calculator(data_array, bvals, model, estimated_params)
+                
+                # mean rrmse
+                mean_rrmse(rrmse_list)
+            # select best_bval
+        
+            best_bvals = []
+        
+        return 0
+        
+
     def rrmse_calculator(data_array, bvals, model, estimated_params):
         """ A method to calculate the
 
@@ -27,6 +61,7 @@ class LinearReduction:
         """
 
         return 0
+
 
     def mean_rrmse(data, bvals, model, estimated_params):
         """ A method to calculate the
