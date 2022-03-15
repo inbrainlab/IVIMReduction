@@ -15,8 +15,6 @@ class LinearReduction:
     rrmse_best = [] # 1 x n_reduction
 
     # Methods
-    def dataLoop(data, bvals, n_reduction, fitting_method):
-    
     def linearAlgorithmLoop(data, bvals, n_reduction, fitting_method):
         """ A method for loop linearly in the best b_vals selections
         """
